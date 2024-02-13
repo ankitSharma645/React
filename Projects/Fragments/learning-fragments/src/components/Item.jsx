@@ -16,16 +16,28 @@ export default Item;
 */
 import styles from "./Item.module.css";
 
-const Item = ({foodItems})=>{
-    return  (
+const Item = ({ foodItems }) => {
 
-        <li  className= {`${styles ["kg-item"]} list-group-item`} >
+
+    const HandleBuyButton = (event)=>{
+        console.log(event);
+        console.log(`${foodItems} being bought`);
+
+    };
+    return (
+
+        <li className={`${styles["kg-item"]} list-group-item`} >
 
             <span className={styles["kg-span"]}> {foodItems}</span>
-        
-    
-      </li>
+            <button
+                className={`${styles.button} btn btn-info`}
+                onClick={(event)=>   HandleBuyButton(event)}
+            >
+                Buy
+            </button>
+
+        </li>
     )
-   
+
 }
 export default Item;

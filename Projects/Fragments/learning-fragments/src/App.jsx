@@ -5,6 +5,7 @@ import ErrorMessage from "./components/ErrorMessage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css'
 import Container from "./components/Container";
+import FoodInput from "./components/FoodInput";
 
 // 1st method {if-else}
 /*
@@ -82,6 +83,7 @@ function App() {
         
         <Container>
           <h1 className="food-heading"> Heallthy Food</h1>
+          <FoodInput></FoodInput>
           <ErrorMessage items ={foodItems}></ErrorMessage>
           <FoodItems items ={foodItems}></FoodItems>
 
