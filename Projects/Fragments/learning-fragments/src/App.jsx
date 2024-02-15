@@ -3,9 +3,11 @@
 import FoodItems from "./components/FoodItems";
 import ErrorMessage from "./components/ErrorMessage";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import './App.css'
 import Container from "./components/Container";
 import FoodInput from "./components/FoodInput";
+import { useState } from "react";
 
 // 1st method {if-else}
 /*
@@ -72,31 +74,41 @@ export default App
 */
 
 // 3nd method for conditional rendering
-
+/*
 function App() {
-    
+
   // let foodItems =[];
   let foodItems = ["dal", "Green vegetable", "roti", "salad", "milk"];
 
+  let textStateArr = useState("Food Item Entered by user");
+  let textToshow = textStateArr[0];
+  let setTextState = textStateArr[1];
+
+  const handleOnChange = (event) => {
+    console.log(event.target.value);
+    setTextState(event.target.value);
+  }
+
   return (
     <>
-        
-        <Container>
-          <h1 className="food-heading"> Heallthy Food</h1>
-          <FoodInput></FoodInput>
-          <ErrorMessage items ={foodItems}></ErrorMessage>
-          <FoodItems items ={foodItems}></FoodItems>
 
-        </Container>
-        <Container>
-          <p>
-            Above is the list of healthy foods that are good for your health and well being
-          </p>
-        </Container>
+      <Container>
+        <h1 className="food-heading"> Heallthy Food</h1>
+        <ErrorMessage items={foodItems}></ErrorMessage>
+        <FoodInput handleOnChange={handleOnChange}></FoodInput>
+        <p>{textToshow}</p>
+        <FoodItems items={foodItems}></FoodItems>
 
-      
-      
-      
+      </Container>
+      <Container>
+        <p>
+          Above is the list of healthy foods that are good for your health and well being
+        </p>
+      </Container>
+
+
+
+
 
     </>
   )
@@ -104,3 +116,49 @@ function App() {
 }
 
 export default App;
+
+*/
+
+
+function App() {
+/*
+  let[foodItems,setFoodItems] = useState(["dal", "Green vegetable"]);*/
+  
+  let[foodItems,setFoodItems] = useState([]);
+
+
+  const onKeyDown = (event)=>{
+    console.log(event.key);
+    if(event.key =="Enter"){
+      let newFoodItem = event.target.value;
+      event.target.value ="";
+      
+      let newItems = [...foodItems ,newFoodItem];
+      setFoodItems(newItems);
+    }
+  };
+
+
+  return (
+    <>
+
+      <Container>
+        <h1 className="food-heading"> Heallthy Food</h1>
+        <ErrorMessage items={foodItems}></ErrorMessage>
+        <FoodInput handleKeyDown={onKeyDown}></FoodInput>
+        <FoodItems items={foodItems}></FoodItems>
+
+      </Container>
+      <Container>
+        <p>
+          Above is the list of healthy foods that are good for your health and well being
+        </p>
+      </Container>
+      
+    </>
+  )
+
+}
+
+export default App;
+
