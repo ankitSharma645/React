@@ -22,9 +22,9 @@ function App() {
   return (
     <>
       <h1> Healthy food</h1>
-      <ul className="list-group">
+      <ul classNameName="list-group">
         {foodItems.map((item) => (
-          <li key={item} className="list-group=item">
+          <li key={item} classNameName="list-group=item">
             {item}
 
           </li>
@@ -54,9 +54,9 @@ function App() {
       <h1> Healthy food</h1>
 
       {emptyMessage}
-      <ul className="list-group">
+      <ul classNameName="list-group">
         {foodItems.map((item) => (
-          <li key={item} className="list-group=item">
+          <li key={item} classNameName="list-group=item">
             {item}
 
           </li>
@@ -93,7 +93,7 @@ function App() {
     <>
 
       <Container>
-        <h1 className="food-heading"> Heallthy Food</h1>
+        <h1 classNameName="food-heading"> Heallthy Food</h1>
         <ErrorMessage items={foodItems}></ErrorMessage>
         <FoodInput handleOnChange={handleOnChange}></FoodInput>
         <p>{textToshow}</p>
@@ -143,7 +143,7 @@ function App() {
     <>
 
       <Container>
-        <h1 className="food-heading"> Heallthy Food</h1>
+        <h1 classNameName="food-heading"> Heallthy Food</h1>
         <ErrorMessage items={foodItems}></ErrorMessage>
         <FoodInput handleKeyDown={onKeyDown}></FoodInput>
         <FoodItems items={foodItems}></FoodItems>

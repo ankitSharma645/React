@@ -11,7 +11,7 @@ function Hello(){
 
     return <p>
         My Name is: {myName()}
-        My Class Roll Number is: {RollNo}
+        My className Roll Number is: {RollNo}
     </p>
    
    

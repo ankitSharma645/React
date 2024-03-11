@@ -3,7 +3,7 @@
 const Item = ({foodItems})=>{
     return  (
 
-        <li  className=  "list-group-item">
+        <li  classNameName=  "list-group-item">
 
             <span> {foodItems}</span>
         
@@ -19,11 +19,11 @@ import styles from "./Item.module.css";
 const Item = ({ foodItem, bought, handleBuyButton }) => {
     return (
       <li
-        className={`${styles["kg-item"]} list-group-item ${bought && "active"}`}
+        classNameName={`${styles["kg-item"]} list-group-item ${bought && "active"}`}
       >
-        <span className={styles["kg-span"]}>{foodItem}</span>
+        <span classNameName={styles["kg-span"]}>{foodItem}</span>
         <button
-          className={`${styles.button} btn btn-info`}
+          classNameName={`${styles.button} btn btn-info`}
           onClick={handleBuyButton}
         >
           Buy

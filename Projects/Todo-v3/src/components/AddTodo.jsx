@@ -26,19 +26,17 @@ function AddTodo({ onNewItem }) {
 
     console.log(`${todoName} due on :${dueDate}`);
 
-
-
     onNewItem(todoName, dueDate);
    /* setDueDate("");
     setTodoName("");*/
   };
 
   return (
-    <div className="container text-center">
-      <form className="row kg-row"
+    <div classNameName="container text-center">
+      <form classNameName="row kg-row"
        onSubmit={handleAddButtonClicked}>
         
-        <div className="col-6">
+        <div classNameName="col-6">
           <input
             type="text"
             ref={todoElementName}
@@ -48,15 +46,15 @@ function AddTodo({ onNewItem }) {
             onChange={handleNameChange}*/
           />
         </div>
-        <div className="col-4">
+        <div classNameName="col-4">
           <input type="date" 
           ref={dueDateElement}
          /* value={dueDate}/* onChange={handleDateChange}*/ />
         </div>
-        <div className="col-2">
+        <div classNameName="col-2">
           <button
            
-            className="btn btn-success kg-button"
+            classNameName="btn btn-success kg-button"
            
           >
           <SiAddthis />

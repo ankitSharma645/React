@@ -6,24 +6,40 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from './components/Footer';
 import Sidebar from './components/Sidebar';
 import Create_post from './components/Create_post';
-import Post_List from './components/Post_List';
+import Post_List from './components/PostList';
+import PostListProvider from './store/post-list-store';
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedTab, setselectedTab] = useState("");
 
   return (
     <>
-      <div className="app-container">
 
-        <Sidebar></Sidebar>
+      <PostListProvider>
 
-        <div className="content">
-          <Header></Header>
-          <Create_post></Create_post>
-          <Post_List />
-          <Footer></Footer>
+        <div className="app-container">
+
+          <Sidebar selectedTab={selectedTab}
+
+            setselectedTab={setselectedTab}
+
+          ></Sidebar>
+
+          <div className="content">
+            <Header></Header>
+
+            {selectedTab === "Home" ? (
+              <Post_List />) : (
+              <Create_post></Create_post>
+
+            )
+            }
+            <Footer></Footer>
+          </div>
+
         </div>
 
-      </div>
+      </PostListProvider>
+
     </>
   )
 }
